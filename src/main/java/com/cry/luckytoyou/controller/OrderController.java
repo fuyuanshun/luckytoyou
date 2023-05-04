@@ -18,6 +18,10 @@ import java.util.UUID;
 public class OrderController {
 
 
+    /**
+     * 处理接口
+     * @return
+     */
     @GetMapping("/create/result")
     public DeferredResult<Object> createResult() {
         DeferredResult<Object> deferredResult = new DeferredResult<>(5000L, ()->{return "fail";});
@@ -25,6 +29,10 @@ public class OrderController {
         return deferredResult;
     }
 
+    /**
+     * 设置结果接口
+     * @return
+     */
     @GetMapping("/create")
     public String create(){
         String orderNum = UUID.randomUUID().toString();
